@@ -1,43 +1,31 @@
-# 📊 Suivi de la Population Mondiale
+# World Population Dashboard (R Flexdashboard)
 
-Dashboard R Flexdashboard pour analyser les tendances démographiques mondiales.
+Interactive dashboard for exploring global demographic trends: population, growth, life expectancy,
+median age, birth, death and fertility rates, and international migration flows.
 
-## 🎯 Fonctionnalités
+## Features
 
-- **Indicateurs démographiques** : Population, croissance, espérance de vie, âge médian
-- **Analyses temporelles** : Natalité, mortalité, fertilité
-- **Cartes interactives** : Flux migratoires mondiaux
-- **Filtres dynamiques** : Par année, région et pays
-- **Export de données** : Téléchargement CSV
+- Key demographic indicators with year, region and country filters
+- Time series of natality, mortality and fertility
+- Interactive maps of migration flows (Leaflet)
+- Interactive tables and CSV export
 
-## 🚀 Installation
+## Structure
 
-```r
-# Installer les packages
-packages <- c("flexdashboard", "shiny", "dplyr", "plotly", "highcharter", 
-              "DT", "readxl", "leaflet", "rnaturalearth", "sf", "countrycode")
-install.packages(packages)
+```
+world_population_dashboard.Rmd   the dashboard (Flexdashboard + Shiny runtime)
+data/data.xlsx                   source data (sheet "Reel")
+assets/                          logo and favicon
 ```
 
-## 💻 Utilisation
+## Run it
 
-1. Cloner le repo
-2. Placer le fichier `data.xlsx` avec une feuille "Reel"
-3. Mettre à jour le chemin dans le code
-4. Ouvrir le `.Rmd` dans RStudio et cliquer sur "Knit"
+```r
+install.packages(c("flexdashboard", "shiny", "dplyr", "plotly", "highcharter", "DT",
+                   "readxl", "leaflet", "rnaturalearth", "sf", "countrycode"))
+rmarkdown::run("world_population_dashboard.Rmd")
+```
 
-## 📊 Format des données
+Or open the `.Rproj` in RStudio and click **Run Document**.
 
-Le fichier Excel doit contenir :
-- Year, Type, Region
-- Total Population, Male/Female Population
-- Life Expectancy, Fertility Rate
-- Migration data etc....
-
-## 👨‍💻 Auteur
-
-**Klaus KUEKOU**
-***Statistical Analyst***
-***www.linkedin.com/in/klaus-kuekou-217bba173**
-***kfkwconcept@gmail.com**
-***+33 758 716 650***
+**Author:** Klaus KUEKOU · [LinkedIn](https://www.linkedin.com/in/klaus-kuekou-217bba173)
